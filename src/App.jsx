@@ -11,7 +11,7 @@ import Sidebar from "./components/global/Sidebar";
 import Home from "./components/global/Home";
 
 
-function App() {
+function App() {  
   return (
     <BrowserRouter>
       <Routes>

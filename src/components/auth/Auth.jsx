@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import DevButton from '../dev-cmp/Button';
+import { toast } from 'sonner';
 
 // Configure axios defaults
 axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
@@ -49,13 +50,16 @@ const Auth = ({ role = 'HR' }) => {
             } else {
               response = await axios.post('api/login', loginData);
             }
+
+            console.log(response);
             // Handle successful login
-            if (response.data.user) {
-                
+            if (response.status == "201" || response.status == "200") {                
                 // Redirect based on role
-                if (response.data.user.role === 'COMPANY') {
-                    navigate('/meeting');
+                if (role == 'COMPANY') {
+                    toast.success('Registration successful');
+                    navigate('/login');
                 } else {
+                    toast.success('Login successful');
                     navigate('/meeting');
                 }
             }
