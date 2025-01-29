@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import DevButton from '../dev-cmp/button';
+import DevButton from '../dev-cmp/Button';
 
 // Configure axios defaults
 axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;

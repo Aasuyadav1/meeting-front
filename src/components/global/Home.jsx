@@ -1,5 +1,5 @@
 import React from 'react'
-import DevButton from '../dev-cmp/button'
+import DevButton from '../dev-cmp/Button'
 
 const Home = () => {
   return (
